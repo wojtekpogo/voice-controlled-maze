@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<grammar xml:lang="en" tag-format="semantics/1.0" version="1.0" xmlns="http://www.w3.org/2001/06/grammar" root="toplevel">
+
+    <rule id="toplevel" scope="public">
+        <one-of>
+            <item>
+                <ruleref uri="#playstate" />
+            </item>
+         
+            <item>
+                <ruleref uri="#movestate" />
+            </item>
+            <item>
+                <ruleref uri="#tutorialstate" />
+            </item>
+
+            <item>
+                <ruleref uri="#ingame" />
+            </item>
+            <item>
+                <ruleref uri="#losemenu" />
+            </item>
+        </one-of>
+    </rule>
+
+    <!--Menu Controls-->
+    <rule id="playstate">
+        <one-of>
+            <item>
+                <tag>out.action = "start";</tag>
+
+                <one-of>
+                    <item>Start a new game</item>
+                    <item>Begin a new game</item>
+                    <item>Play a new game</item>
+                    <item>New Game</item>
+                    <item>I want to play</item>
+                </one-of>
+            </item>
+
+            <item>
+                <tag>out.action = "quit";</tag>
+
+                <one-of>
+                    <item>Quit the game</item>
+                    <item>I give up</item>
+                </one-of>
+            </item>
+
+            <item>
+                <tag>out.action = "tutorial";</tag>
+
+                <one-of>
+                    <item>Practice</item>
+                    <item>Train</item>
+                </one-of>
+            </item>
+        </one-of>
+    </rule>
+
+    <!-- Controls the player movement -->
+    <rule id="movestate">
+        <one-of>
+            <item>
+                <tag>out.action = "right";</tag>
+
+                <one-of>
+                    <item>Move Right</item>
+                    <item>Go Right</item>
+                    <item>Turn Right </item>
+                </one-of>
+            </item>
+
+            <item>
+                <tag>out.action = "left";</tag>
+
+                <one-of>
+                    <item>Move Left</item>
+                    <item>Go Left</item>
+                    <item>Turn Left</item>
+                </one-of>
+            </item>
+
+            <item>
+                <tag>out.action = "up";</tag>
+
+                <one-of>
+                    <item>Move Up</item>
+                    <item>Go Up</item>
+                </one-of>
+            </item>
+
+            <item>
+                <tag>out.action = "down";</tag>
+
+                <one-of>
+                    <item>Move Down</item>
+                    <item>Go Down</item>
+                </one-of>
+            </item>
+
+            <item>
+                <tag>out.action = "stop";</tag>
+
+                <one-of>
+                    <item>Stay</item>
+                    <item>Stop here</item>
+                    <item>Don't move</item>
+                </one-of>
+            </item>
+        </one-of>
+
+    </rule>
+
+    <!--Tutorial Controls-->
+    <rule id="tutorialstate">
+        <one-of>
+            <item>
+                <tag>out.action = "ready";</tag>
+
+                <one-of>
+                    <item>I'am ready</item>
+                    <item>Let's go</item>
+                </one-of>
+            </item>
+
+            <item>
+                <tag>out.action = "menu";</tag>
+
+                <one-of>
+                    <item>Go back to the menu</item>
+                    <item>Bring me to the menu</item>
+                </one-of>
+            </item>
+        </one-of>
+    </rule>
+
+    <!--In Game Controls-->
+    <rule id="ingame">
+        <one-of>
+            <item>
+                <tag>out.action = "resume";</tag>
+
+                <one-of>
+                    <item>Resume the game</item>
+                </one-of>
+            </item>
+
+            <item>
+                <tag>out.action = "pause";</tag>
+
+                <one-of>
+                    <item>Pause the game</item>
+                </one-of>
+            </item>
+        </one-of>
+    </rule>
+
+    <!--Lose Menu Controls-->
+    <rule id="losemenu">
+        <one-of>
+            <item>
+                <tag>out.action = "restart";</tag>
+
+                <one-of>
+                    <item>Restart the Game</item>
+                    <item>Play Again</item>
+                </one-of>
+            </item>
+
+        </one-of>
+    </rule>
+</grammar>
